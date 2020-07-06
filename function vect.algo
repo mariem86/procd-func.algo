@@ -1,0 +1,36 @@
+ function dot_product (VAR vect_A: ARRAY_OF INTEGER[3]; ,VAR vect_B:ARRAY_OF INTEGER[3]; ): INTEGER;
+VAR
+ i:INTEGER;
+ n:INTEGER;
+BEGIN
+    n := vect_A.length
+    product: INTEGER:= 0;
+FOR i FROM 0 TO n   DO
+  product= product + vect_A[i] * vect_B[i];
+  return product;
+END_FOR
+ Write(product)
+END
+
+ALGORITHM orthogonal
+VAR
+ vect_1: ARRAY_OF INTEGER[3];
+ vect_2: ARRAY_OF INTEGER[3];
+ i : INTEGER;
+ BEGIN 
+//entrer le prmier vecteur
+ FOR i FROM 0 TO vect_1.length DO
+ Read(vect_1[i]); 
+     END_FOR 
+//entrer le deuxeiemme vecteur
+ FOR i FROM 0 TO vect_2.length DO
+ Read(vect_2[i]); 
+     END_FOR 
+  product := dot_product (vect_1,vect_2 );
+ IF (product = 0) THEN
+   write('les vecteurs sont orthoghnaux')
+   ELSE (product<>0)THEN
+    write('les vecteurs ne sont pas orthoghnaux')
+ END_IF
+  Write(product)
+END
